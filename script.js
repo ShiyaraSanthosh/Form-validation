@@ -12,31 +12,24 @@ function validform() {
         return false;
     }
     if(username===''){
-        username.innerHTML = '<i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i>';
-        return false;
+       alert("Username cannot be empty");
+       return false;
     }
     const usernameRegex= /^[a-zA-Z0-9]{3,}$/;
     if(!usernameRegex.test(username)){
-        username.innerHTML ='<i class="fa fa-check-circle" aria-hidden="true" ></i>';
+        username.parentElement.textcontent ='<i class="fa fa-check-circle" aria-hidden="true" ></i>';
         username.style.color = "#63E6BE";
         return true;
     } else {
-        username.innerHTML = "invalid";
+        username.parentElement.innerHTML = '<i class="fa-solid fa-circle-xmark" style="color: #ff0000;"></i>';
         return false;
     }
+    if(email===''){
+        alert("Email cannot be empty");
+        return false;
+    }
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
