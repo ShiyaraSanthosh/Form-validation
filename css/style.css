@@ -1,0 +1,9 @@
+/* 
+.container_col1 input {
+    display: grid;
+    grid-column-start: 1;
+        grid-column-end: 2;
+        grid-template-rows: 3fr 3fr;
+        border: 1px solid black;
+        margin-left: 100px 
+    } */
