@@ -44,6 +44,8 @@ function validform(event) {
         username.parentElement.appendChild(icon);
         return false;
     }
+  
+  
 
   //email 
    const emailError = document.getElementById("emailError");
@@ -52,7 +54,7 @@ function validform(event) {
          emailError.style.color = "red";
    }
    const emailRegex = "[a-z0-9._%+\-]+@[a-z0-9.\-]+\.[a-z]{2,}$";
-   if (emailValue.test(emailRegex)){
+   if (emailRegex.test(emailValue)){
     emailError.innerHTML = "valid email";
     emailError.style.color = "green";
     let icon = document.createElement("i");
@@ -74,7 +76,35 @@ function validform(event) {
     email.parentElement.appendChild(icon);
     return false;
    }
-}
+  
+   //password 
+    const passwordError = document.getElementById("passwordError");
+    if( passwordValue === '' || passwordValue === null) {
+      passwordError.innerHTML = "Password is required";
+      passwordError.style.color = "red";
+    }
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])(?=.{8,})/; 
+    if(passwordRegex.test(passwordValue)) {
+      passwordError.innerHTML = "valid password";
+      passwordError.style.color = "green";
+      let icon = document.createElement("i");
+      icon.className = "fa fa-check-circle validation-icon w-full absolute top-[35px] ";
+      icon.style.color = "#63E6BE";
+      icon.style.marginLeft = "300px";
+      password.parentElement.appendChild(icon);
+    } else {
+      passwordError.innerHTML = "Invalid password";
+      passwordError.style.color = "red";
+      let icon = document.createElement("i");
+      icon.className = "fa-solid fa-circle-xmark";
+      icon.style.color = "red";
+      icon.style.marginLeft = "5px";
+      password.parentElement.appendChild(icon);
+    }
+
+
+  }
+
   
   //character count
   const charcount = document.getElementById("char-count");
