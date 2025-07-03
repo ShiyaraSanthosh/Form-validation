@@ -12,13 +12,3 @@
 
 const EducationError=document.getElementById("EducationError");
 
-
-EducationError.innerHTML="";
-
-if (higherEducationValue==="") {
-    const warningIcon=document.createElement("i");
-    warningIcon.className="fa-solid fa-triangle-exclamation";
-    warningIcon.style.marginRight="8px";
-    EducationError.innerHTML="Invalid password";
-    EducationError.style.color="red";
-    higherEducation.parentElement.appendChild(warningIcon); } */
